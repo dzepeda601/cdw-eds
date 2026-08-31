@@ -1,0 +1,142 @@
+{
+  "metadata": {
+    "projectType": "da"
+  },
+  "templates": [
+    {
+      "name": "artificial-intelligence-ai",
+      "urls": [
+        "http://localhost:8899/artificial-intelligence-ai.html"
+      ],
+      "representativeUrl": "http://localhost:8899/artificial-intelligence-ai.html",
+      "urlPattern": "/*",
+      "description": "CDW Artificial Intelligence (AI) Solutions marketing page. Hero + editorial prose + card grids + featured whitepaper banner + article insights + partner logos + CTA form. Reuse-only: hero, cards, related-articles, columns, form.",
+      "blocks": [
+        {
+          "name": "hero",
+          "instances": [
+            "#content > div:nth-of-type(2) > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.cdwgridlayout:nth-of-type(1)",
+            "#content > div:nth-of-type(2) > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.cdwgridlayout:nth-of-type(4)"
+          ]
+        },
+        {
+          "name": "cards",
+          "instances": [
+            "#content > div:nth-of-type(2) > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.cdwgridlayout:nth-of-type(3) .cdw-aligned-height-cards",
+            "#content > div:nth-of-type(2) > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.cdwgridlayout:nth-of-type(5) .cdw-aligned-height-cards"
+          ]
+        },
+        {
+          "name": "related-articles",
+          "instances": [
+            "#content > div:nth-of-type(2) > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.cdwgridlayout:nth-of-type(6) .content-card-container"
+          ]
+        },
+        {
+          "name": "columns",
+          "instances": [
+            "#content > div:nth-of-type(2) > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.cdwgridlayout:nth-of-type(7) .cdwimageatom"
+          ]
+        },
+        {
+          "name": "form",
+          "instances": [
+            "#content > div:nth-of-type(2) > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.cdwgridlayout:nth-of-type(8) .cdwmarketoform"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero",
+          "selector": "#content > div:nth-of-type(2) > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.cdwgridlayout:nth-of-type(1)",
+          "style": null,
+          "blocks": [
+            "hero"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "Why CDW intro",
+          "selector": "#content > div:nth-of-type(2) > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.cdwgridlayout:nth-of-type(2)",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "#content > div:nth-of-type(2) > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.cdwgridlayout:nth-of-type(2)"
+          ]
+        },
+        {
+          "id": "section-3",
+          "name": "Designed for Every Stage cards",
+          "selector": "#content > div:nth-of-type(2) > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.cdwgridlayout:nth-of-type(3)",
+          "style": null,
+          "blocks": [
+            "cards"
+          ],
+          "defaultContent": [
+            "#content > div:nth-of-type(2) > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.cdwgridlayout:nth-of-type(3) .cdwheadlineatom"
+          ]
+        },
+        {
+          "id": "section-4",
+          "name": "Featured white paper banner",
+          "selector": "#content > div:nth-of-type(2) > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.cdwgridlayout:nth-of-type(4)",
+          "style": null,
+          "blocks": [
+            "hero"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-5",
+          "name": "How CDW Helps text cards",
+          "selector": "#content > div:nth-of-type(2) > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.cdwgridlayout:nth-of-type(5)",
+          "style": null,
+          "blocks": [
+            "cards"
+          ],
+          "defaultContent": [
+            "#content > div:nth-of-type(2) > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.cdwgridlayout:nth-of-type(5) .cdwheadlineatom"
+          ]
+        },
+        {
+          "id": "section-6",
+          "name": "Insights articles",
+          "selector": "#content > div:nth-of-type(2) > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.cdwgridlayout:nth-of-type(6)",
+          "style": null,
+          "blocks": [
+            "related-articles"
+          ],
+          "defaultContent": [
+            "#content > div:nth-of-type(2) > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.cdwgridlayout:nth-of-type(6) .cdwheadlineatom"
+          ]
+        },
+        {
+          "id": "section-7",
+          "name": "Partner logos",
+          "selector": "#content > div:nth-of-type(2) > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.cdwgridlayout:nth-of-type(7)",
+          "style": null,
+          "blocks": [
+            "columns"
+          ],
+          "defaultContent": [
+            "#content > div:nth-of-type(2) > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.cdwgridlayout:nth-of-type(7) .cdwheadlineatom"
+          ]
+        },
+        {
+          "id": "section-8",
+          "name": "Request an AI Assessment CTA",
+          "selector": "#content > div:nth-of-type(2) > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.cdwgridlayout:nth-of-type(8)",
+          "style": "highlight",
+          "blocks": [
+            "form"
+          ],
+          "defaultContent": [
+            "#content > div:nth-of-type(2) > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.cdwgridlayout:nth-of-type(8) .cdwheadlineatom"
+          ]
+        }
+      ]
+    }
+  ]
+}

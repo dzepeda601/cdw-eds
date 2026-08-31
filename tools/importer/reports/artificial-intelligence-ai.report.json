@@ -1,0 +1,21 @@
+{
+  "status": "success",
+  "url": "http://localhost:8899/artificial-intelligence-ai.html",
+  "path": "artificial-intelligence-ai",
+  "timestamp": "2026-08-31T18:56:22.301Z",
+  "title": "Artificial Intelligence (AI) Solutions | CDW",
+  "template": "artificial-intelligence-ai",
+  "blocks": [
+    "hero",
+    "hero",
+    "cards",
+    "cards",
+    "cards",
+    "related-articles",
+    "columns",
+    "columns",
+    "columns",
+    "columns",
+    "form"
+  ]
+}

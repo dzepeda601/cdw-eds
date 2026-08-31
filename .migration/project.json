@@ -1,0 +1,12 @@
+{
+  "type": "da",
+  "pluginRoot": "/home/node/.excat-marketplaces/excat-marketplace/excat",
+  "sites": {
+    "cdw-eds": {
+      "previewOrg": "dzepeda601",
+      "previewSite": "cdw-eds",
+      "contentHostUrl": "https://content.da.live/dzepeda601/cdw-eds/",
+      "libraryUrl": "https://main--sta-xwalk-boilerplate--aemysites.aem.page/tools/sidekick/library.json"
+    }
+  }
+}
