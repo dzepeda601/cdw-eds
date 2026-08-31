@@ -271,3 +271,82 @@ main .form form {
   color: var(--color-gold);
   transform: translateY(-2px);
 }
+
+/* -------------------------------------------------------------------------
+   "highlight" CTA band (Request an AI Assessment)
+   The section-metadata style=highlight already paints a full-bleed brand-red
+   band with centered white text (see styles/styles.css). On that band the
+   form/CTA sits directly on the red — no card chrome — with a WHITE button
+   that has red text, mirroring the source "Connect with an Expert" CTA.
+   These rules complement the global .section.highlight styling; they do not
+   redefine the band.
+   ------------------------------------------------------------------------- */
+main .section.highlight .form-container {
+  padding-block: 0;
+}
+
+main .section.highlight .form-container .form-wrapper {
+  margin-top: var(--space-m);
+}
+
+/* Drop the card look: transparent, borderless, centered content on the band. */
+main .section.highlight .form form {
+  gap: var(--space-m);
+  max-width: 520px;
+  margin-inline: auto;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
+  color: #fff;
+  justify-items: center;
+  text-align: center;
+}
+
+main .section.highlight .form .button-wrapper {
+  margin-top: 0;
+  justify-content: center;
+}
+
+/* Keep any authored form fields legible if the band ever carries inputs. */
+main .section.highlight .form .form-field > label:first-child,
+main .section.highlight .form .form-field > legend,
+main .section.highlight .form .field-help-text,
+main .section.highlight .form .form-status {
+  color: #fff;
+}
+
+main .section.highlight .form input,
+main .section.highlight .form textarea,
+main .section.highlight .form select {
+  border-color: rgb(255 255 255 / 60%);
+  background: #fff;
+  color: var(--color-ink, #150404);
+}
+
+/* White button with red text — high contrast on the red band, matching source. */
+main .section.highlight .form .button-wrapper button.button:not(.secondary) {
+  border: 2px solid #fff;
+  background: #fff;
+  color: var(--color-brand-red);
+}
+
+main .section.highlight .form .button-wrapper button.button:not(.secondary):hover {
+  border-color: rgb(255 255 255 / 85%);
+  background: rgb(255 255 255 / 85%);
+  color: var(--color-brand-red);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 20%);
+}
+
+/* Secondary (reset) button on the band: outlined white. */
+main .section.highlight .form .button-wrapper button.button.secondary {
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+}
+
+main .section.highlight .form .button-wrapper button.button.secondary:hover {
+  border-color: #fff;
+  background: rgb(255 255 255 / 15%);
+  color: #fff;
+}

@@ -41,3 +41,61 @@
     order: unset;
   }
 }
+
+/* ==========================================================================
+   Partner-logo variant: 4 image-only columns (e.g. "Explore AI Solutions
+   From Our Partners"). Scoped to .columns-4-cols whose cells are all
+   .columns-img-col so generic text/image columns usages are unaffected.
+   Source: 4 full-colour logos, ~70px tall, object-fit contain, centred in
+   equal-width columns with a 30px gutter, vertically centred in one row.
+   ========================================================================== */
+.columns.columns-4-cols > div {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-l);
+}
+
+.columns.columns-4-cols > div > .columns-img-col {
+  display: flex;
+  flex: 1 1 40%;
+  align-items: center;
+  justify-content: center;
+  order: 0;
+  min-width: 0;
+  margin: 0;
+}
+
+/* EDS wraps the logo <a> in a <p>; strip its default spacing */
+.columns.columns-4-cols > div > .columns-img-col :is(p, a) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  width: auto;
+}
+
+/* Logo images: contain at a uniform height, no crop, no radius.
+   Overrides .columns img (100%/radius) and the global
+   main img:not([width],[height]) { aspect-ratio:16/9; object-fit:cover }. */
+main .columns.columns-4-cols img {
+  width: auto;
+  max-width: min(100%, 180px);
+  height: auto;
+  max-height: 70px;
+  object-fit: contain;
+  aspect-ratio: auto;
+  border-radius: 0;
+}
+
+@media (width >= 900px) {
+  .columns.columns-4-cols > div {
+    flex-wrap: nowrap;
+    gap: var(--space-xl);
+  }
+
+  .columns.columns-4-cols > div > .columns-img-col {
+    flex: 1 1 0;
+  }
+}

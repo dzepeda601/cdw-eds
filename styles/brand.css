@@ -1,0 +1,44 @@
+/*
+ * brand.css — CDW brand design tokens
+ * Extracted from the CDW Artificial Intelligence (AI) Solutions page.
+ * Imported first by styles.css so these tokens override the boilerplate theme.
+ *
+ * Fonts: Poppins (headings) + Source Sans 3 (body, = "Source Sans Pro").
+ * Loaded from Google Fonts here because head.html is a do-not-modify file
+ * in this project; a CSS @import achieves the same font delivery.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap');
+
+:root,
+:host {
+  /* CDW brand fonts */
+  --font-family: "Source Sans 3", "Source Sans Pro", verdana, sans-serif;
+  --font-family-serif: poppins, verdana, sans-serif;
+  --body-font-family: var(--font-family);
+  --heading-font-family: poppins, verdana, sans-serif;
+
+  /* CDW brand colors */
+  --color-brand-red: #c00;
+  --color-text: #150404;
+  --color-link: #150404;
+  --color-link-hover: #c00;
+
+  /* map boilerplate light-scheme tokens to CDW brand (override the heritage palette) */
+  --color-parchment: #fff;
+  --color-ink: #150404;
+  --color-rust: #c00;
+  --background-color: #fff;
+  --text-color: #150404;
+  --link-color: #150404;
+  --link-hover-color: #c00;
+
+  /* CDW heading scale (Poppins ExtraBold section heads = 32px desktop) */
+  --heading-line-height: 1.25;
+
+  /* layout rhythm */
+  --cdw-content-width: 1200px;
+  --cdw-card-radius: 16px;
+  --cdw-card-shadow: 0 16px 32px 0 rgb(80 67 67 / 8%), 0 0 16px 0 rgb(80 67 67 / 4%);
+  --cdw-btn-radius: 8px;
+}

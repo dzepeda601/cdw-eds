@@ -1,4 +1,7 @@
-/* Related articles block – default slider, mobile-first */
+/* Related articles block – default slider, mobile-first.
+   Styled to match the CDW "Insights for Every Stage of the AI Journey"
+   content-card carousel: white cards, 16px radius, thumbnail band on top,
+   subtle soft shadow, date + title stacked, brand-red slider arrows. */
 
 main .related-articles {
   width: 100%;
@@ -11,7 +14,7 @@ main .related-articles .related-articles-slider {
   position: relative;
 }
 
-/* List – horizontal scroll by default */
+/* List – horizontal scroll by default (source uses a 3-up carousel, ~30px gutter) */
 main .related-articles .related-articles-list {
   list-style: none;
   margin: 0;
@@ -20,28 +23,29 @@ main .related-articles .related-articles-list {
   overflow-x: auto;
   overscroll-behavior-x: contain;
   scroll-snap-type: x mandatory;
-  gap: var(--space-l);
+  gap: 30px;
   padding-bottom: var(--space-s);
   scroll-padding-inline: var(--content-padding-inline);
 }
 
-/* Card */
+/* Card – white, 16px radius, soft brand shadow, image band clipped on top */
 main .related-articles .related-articles-card {
-  flex: 0 0 min(86%, 360px);
+  flex: 0 0 min(86%, 357px);
   scroll-snap-align: start;
   margin: 0;
-  border: 1px solid light-dark(var(--color-gray-200), var(--color-gray-700));
-  border-radius: var(--space-m);
-  overflow: clip;
-  background: light-dark(var(--color-light), var(--color-gray-900));
-  transition: transform 0.4s var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1)),
-    border-color 0.3s ease,
-    box-shadow 0.4s ease;
+  border: 0;
+  border-radius: var(--cdw-card-radius);
+  overflow: hidden;
+  background: #fff;
+  box-shadow: var(--cdw-card-shadow);
+  transition: transform 0.3s var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1)),
+    box-shadow 0.3s ease;
 }
 
 /* Card link */
-main .related-articles .related-articles-card-link {
-  color: inherit;
+main .related-articles .related-articles-card-link,
+main .related-articles .related-articles-card-link:any-link {
+  color: var(--color-text);
   text-decoration: none;
   display: flex;
   flex-direction: column;
@@ -49,53 +53,64 @@ main .related-articles .related-articles-card-link {
 }
 
 main .related-articles .related-articles-card-link:focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-brand-red);
   outline-offset: -2px;
-  border-radius: var(--space-m);
+  border-radius: var(--cdw-card-radius);
 }
 
-/* Card accent strip */
+/* Thumbnail band – mirrors the source card's landscape image area (357x234, ~3:2).
+   Source article thumbnails render as a neutral placeholder here, so we present a
+   matching soft-gray band to preserve the card silhouette. */
 main .related-articles .related-articles-card-strip {
-  block-size: var(--space-s);
-  background: var(--color-accent);
+  aspect-ratio: 357 / 234;
+  background:
+    linear-gradient(115deg, rgb(210 205 205) 0%, rgb(197 192 192) 45%, rgb(210 205 205) 100%);
 }
 
-/* Card content */
+/* Card content – 24px padding, stacked */
 main .related-articles .related-articles-card-content {
-  padding: var(--space-m);
+  padding: var(--space-l);
   display: flex;
   flex-direction: column;
-  gap: var(--space-s);
   height: 100%;
 }
 
-/* Heading */
+/* Heading – Source Sans, 20px mobile scaling to source's 25px on desktop, weight 600 */
 main .related-articles .related-articles-card h3 {
-  margin: 0;
-  font-size: var(--heading-font-size-s);
-  line-height: 1.2;
+  order: 2;
+  margin: 0 0 12px;
+  font-family: var(--body-font-family);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.28;
+  letter-spacing: normal;
+  color: var(--color-text);
 }
 
 /* Description */
 main .related-articles .related-articles-card-description {
+  order: 3;
   margin: 0;
-  line-height: 1.55;
-  color: light-dark(var(--color-gray-700), var(--color-gray-300));
+  font-size: var(--body-font-size-m);
+  line-height: 1.5;
+  color: var(--color-text);
 }
 
-/* Date */
+/* Date – small meta line above the title (source order: date -> title) */
 main .related-articles .related-articles-card-date {
-  margin: auto 0 0;
-  font-size: var(--body-font-size-xs);
-  color: var(--color-gray-500);
+  order: 1;
+  margin: 0 0 8px;
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-text);
 }
 
-/* Hover & focus */
+/* Hover */
 main .related-articles .related-articles-card:hover,
 main .related-articles .related-articles-card:focus-within {
-  transform: translateY(-6px);
-  border-color: light-dark(var(--color-gold), rgb(197 160 89 / 40%));
-  box-shadow: 0 20px 40px light-dark(rgb(161 79 43 / 14%), rgb(197 160 89 / 14%));
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px 0 rgb(80 67 67 / 14%), 0 0 16px 0 rgb(80 67 67 / 6%);
 }
 
 /* Empty state */
@@ -108,29 +123,27 @@ main .related-articles .related-articles-controls {
   display: flex;
   justify-content: space-between;
   position: absolute;
-  inset: 50% 0 auto;
-  transform: translateY(-50%);
+  inset: calc(117px - 26px) 0 auto; /* vertically center on the thumbnail band */
   pointer-events: none;
   z-index: 2;
   padding-inline: var(--space-xs);
 }
 
 main .related-articles .related-articles-arrow {
-  border: 1px solid light-dark(rgb(255 255 255 / 55%), rgb(255 255 255 / 16%));
-  background: light-dark(rgb(255 255 255 / 72%), rgb(24 27 32 / 70%));
-  color: inherit;
+  border: 1px solid rgb(21 4 4 / 12%);
+  background: #fff;
+  color: var(--color-brand-red);
   inline-size: 44px;
   block-size: 44px;
   border-radius: 999px;
   padding: 0;
   font-size: 22px;
   line-height: 1;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 10px 24px rgb(0 0 0 / 14%);
+  box-shadow: 0 6px 18px rgb(0 0 0 / 12%);
   pointer-events: auto;
   cursor: pointer;
-  transition: opacity 0.25s, transform 0.25s var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1)),
-    border-color 0.25s;
+  transition: transform 0.25s var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1)),
+    border-color 0.25s, background-color 0.25s, opacity 0.25s;
 }
 
 main .related-articles .related-articles-arrow:disabled {
@@ -139,7 +152,9 @@ main .related-articles .related-articles-arrow:disabled {
 }
 
 main .related-articles .related-articles-arrow:hover:not(:disabled) {
-  border-color: var(--color-gold);
+  border-color: var(--color-brand-red);
+  background: var(--color-brand-red);
+  color: #fff;
   transform: scale(1.08);
 }
 
@@ -152,7 +167,7 @@ main .related-articles .related-articles-arrow.is-hidden {
 
 @media (width >= 600px) {
   main .related-articles .related-articles-card {
-    flex-basis: min(88%, 360px);
+    flex-basis: min(60%, 357px);
   }
 }
 
@@ -162,16 +177,19 @@ main .related-articles .related-articles-arrow.is-hidden {
   }
 
   main .related-articles .related-articles-card {
-    flex-basis: min(32%, 380px);
+    flex: 1 1 0;
+    min-width: 0;
   }
 
-  main .related-articles .related-articles-card-content {
-    padding: var(--space-l);
+  /* Title reaches the source's 25px desktop size */
+  main .related-articles .related-articles-card h3 {
+    font-size: 25px;
+    line-height: 1.28;
   }
 
   main .related-articles .related-articles-arrow {
-    inline-size: 52px;
-    block-size: 52px;
+    inline-size: 48px;
+    block-size: 48px;
     font-size: 24px;
   }
 }
